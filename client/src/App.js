@@ -17,9 +17,9 @@ function App() {
     <div className="App" >
       <AuthContextProvider> 
         <Routes>
-          <Route path="/ayo/adda/:addaId" element={ <Adda socket={socket}/> } />
-          <Route path="/ayo/storage/:storageId" element={ <Storage socket={socket}/> } />
-          <Route path="/ayo/ign/:query" element={ <Incognito /> } />
+          <Route path="https://punkrecords.onrender.com/ayo/adda/:addaId" element={ <Adda socket={socket}/> } />
+          <Route path="https://punkrecords.onrender.com/ayo/storage/:storageId" element={ <Storage socket={socket}/> } />
+          <Route path="https://punkrecords.onrender.com/ayo/ign/:query" element={ <Incognito /> } />
         </Routes>
       </AuthContextProvider>
     </div>
