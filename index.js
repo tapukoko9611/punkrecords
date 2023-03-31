@@ -17,9 +17,16 @@ app.set("trust proxy", true);
 
 const  socketIO = require("socket.io")(http, {
     cors: {
-        origin: "http://localhost:3000"
-    }
+        origin: '*',
+    },
 });
+// const  { Server } = require("socket.io");
+// const socketIO = new Server(http);
+// const io = require("socket.io")
+// const socketIO = io("http://localhost:5000");
+
+// var io = require('socket.io')(http);
+// var socket = io('192.168.1.5/58000');
 
 
 app.get("/trail", (req, res) => {
@@ -114,21 +121,21 @@ socketIO.on("connection", (socket) => {
 });
 
 
-app.use(express.static(path.join(__dirname, "./client/build")));
-app.get("*", function (_, res) {
-    res.sendFile(
-        path.join(__dirname, "./client/build/index.html"),
-        function (err) {
-            res.status(500).send(err);
-        }
-    );
-});
+// app.use(express.static(path.join(__dirname, "./client/build")));
+// app.get("*", function (_, res) {
+//     res.sendFile(
+//         path.join(__dirname, "./client/build/index.html"),
+//         function (err) {
+//             res.status(500).send(err);
+//         }
+//     );
+// });
 
 
 http.listen(5000, async () => {
     try {
         await connectDB();
-        console.log("Listening on port 5000");
+        console.log("Listening on port 58000");
     }
     catch (e) {
         console.log(err.msg);

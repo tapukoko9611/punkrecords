@@ -7,12 +7,12 @@ import AuthContext from "../context/auth-context";
 import styled from "styled-components";
 
 
-
 // If something occurs, its becausee of async sto main function
 // Just use useeEffectt hook isnide and inside it use async on function, not directly
 const Adda = ({ socket }) => {
     const { auth, setAuth } = useContext(AuthContext);
     let { addaId } = useParams();
+    //const axios = axios.create({baseURL: "192.168.1.5:5000"});
 
     const [ inp, setInp ] = useState("");
     const divRef = useRef(null);
